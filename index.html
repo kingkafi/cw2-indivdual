@@ -39,7 +39,7 @@
                 <div class="lessons-list" v-if="sortedLessons.length">
                     <article v-for="(lesson, index) in sortedLessons" :key="lesson.id" class="lesson">
                         <div class="lesson-left">
-                            <img :src="`https://darius-project.herokuapp.com/public/course${index+1}.jpg`" class="lesson-image" />
+                            <img :src="`./public/course${index+1}.jpg`" class="lesson-image" />
                             <h1 class="lesson-title">{{ lesson.topic }}</h1>
                             <button :class="lesson.space === 0 ? 'disabled-purchase-btn' : 'purchase-btn'"
                                 @click="purchaseLesson(lesson)">Purchase Lesson</button>
