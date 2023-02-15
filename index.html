@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./public/style.css">
-    <title>Work 2</title>
+    <title>Coursework 2</title>
 </head>
 
 <body>
@@ -18,17 +18,6 @@
         <section v-if="activePage === 'lessons'">
             <!-- Sorting section -->
             <section class="sorting-section">
-                <select v-model="sortBy">
-                    <option value="topic">Topic</option>
-                    <option value="location">Location</option>
-                    <option value="price">Price</option>
-                    <option value="space">Space</option>
-                </select>
-
-                <select v-model="sortOrder">
-                    <option value="asc">ASC</option>
-                    <option value="desc">DESC</option>
-                </select>
 
                 <input placeholder="Type topic name" class="search" v-model="searchTerm">
             </section>
