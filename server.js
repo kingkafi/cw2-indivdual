@@ -20,6 +20,7 @@ async function createOrder(order) {
 	return await client.db("project").collection("orders").insertOne(order);
 }
 
+// gets lesson from the database
 async function getLessons() {
 	return client
     .db("project")
@@ -27,6 +28,7 @@ async function getLessons() {
     .find().toArray();
 }
 
+// this will update the lesson collection in database removes one space
 async function updateLesson(id, space) {
 	return await client
     .db("project")
@@ -34,6 +36,8 @@ async function updateLesson(id, space) {
     .updateOne({ _id: ObjectId(id) }, { $inc: { "space": -space } });
 }
 
+
+// searches for lessons in the database
 async function searchLesson(searchTerm) {
 return client
   .db("project")
@@ -61,7 +65,7 @@ const logger = function (req, res, next) {
 app.use(logger);
 app.use("/public", express.static(__dirname + "/public"));  // inbuild "static" middleware to serve course images
 
-// Defining api routes
+// Defining  routes
 app.get("/lesson", async (req, res) => {
   const result = await getLessons();
   res.send(result);
@@ -86,6 +90,7 @@ app.get("/search/:searchTerm", async (req, res) => {
   res.send(result);
 });
 
+// send you to the main page
 app.get("/", async (req, res) => {
   res.sendFile(__dirname +"/index.html");
 });
@@ -97,3 +102,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
 });
+
