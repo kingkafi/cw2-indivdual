@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./public/style.css">
-    <title>Coursework 2</title>
+    <title>CourseWork 2</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <!-- Sorting section -->
             <section class="sorting-section">
 
-                <input placeholder="Type topic name" class="search" v-model="searchTerm">
+                <input placeholder="Search" class="search" v-model="searchTerm">
             </section>
 
             <!-- lessons section-->
@@ -36,15 +36,15 @@
                         <div class="lesson-right">
                             <p class="lesson-description" v-html="lesson.description"></p>
                             <p>
-                                <span class="fa fa-map-marker"></span>
+                                <span>Location:</span>
                                 <span>{{ lesson.location }}</span>
                             </p>
                             <p>
-                                <span class="fa fa-money"></span>
+                                <span>Price:</span>
                                 <span>{{ lesson.price }}</span>
                             </p>
                             <p>
-                                <span class="fa fa-users"></span>
+                                <span>Space:</span>
                                 <span>{{ lesson.space }}</span>
                             </p>
                             <p v-if="lesson.space === 0">Out of stock more will come</p>
